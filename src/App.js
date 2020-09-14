@@ -7,11 +7,12 @@ export default class App extends Component {
     super();
 
     this.state = {
-      fullSalary =100
+      fullSalary:1000,
     }
   }
-  handleFullSalaryChange = (newValue)=>{
-    
+  handleFullSalaryChange = (newValue) => {
+    this.setState({ fullSalary: newValue });
+    console.log(this.state.fullSalary)
   }
   render() {
     const { fullSalary } = this.state;
@@ -19,7 +20,7 @@ export default class App extends Component {
       <div className="container">
         <h1 className="center">React Salário</h1>
         <div className="row">
-          <InputFullSalary currentValue ={fullSalary} onSalaryChange={this.handleFullSalaryChange}/>
+          <InputFullSalary currentValue={fullSalary} onSalaryChange={this.handleFullSalaryChange} />
         </div>
       </div>
     );
