@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import InputFullSalary from './components/inputFullSalary';
 
 
 export default class App extends Component {
@@ -6,21 +7,20 @@ export default class App extends Component {
     super();
 
     this.state = {
-       baseINSS:0,
-       discountINSS:0,
-       baseIRPF:0,
-       discountIRPF:0,
-       net:0,
-       baseINSS:0,
+      fullSalary =100
     }
-}
+  }
+  handleFullSalaryChange = (newValue)=>{
+    
+  }
   render() {
-    const {fullSalary} = this.state;
+    const { fullSalary } = this.state;
     return (
       <div className="container">
         <h1 className="center">React Salário</h1>
-
-      
+        <div className="row">
+          <InputFullSalary currentValue ={fullSalary} onSalaryChange={this.handleFullSalaryChange}/>
+        </div>
       </div>
     );
   }
