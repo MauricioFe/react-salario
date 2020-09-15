@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import InputFullSalary from './components/InputFullSalary';
-import InputReadOnly from './components/inputReadOnly';
+import InputReadOnly from './components/InputReadOnly';
 import { calculateSalaryFrom } from './helpers/salary';
 
 
@@ -9,7 +9,7 @@ export default class App extends Component {
     super();
 
     this.state = {
-      fullSalary:1000,
+      fullSalary: 1000,
     }
   }
   handleFullSalaryChange = (newValue) => {
@@ -18,7 +18,7 @@ export default class App extends Component {
   render() {
     const { fullSalary } = this.state;
     const salaryObject = calculateSalaryFrom(fullSalary);
-    const {baseINSS, discountINSS, discountIRPF,baseIRFS, netSalary, percentINSS, percentIRPF} = salaryObject;
+    const { baseINSS, discountINSS, discountIRPF, baseIRPF, netSalary, percentINSS, percentIRPF, percentNetSalary } = salaryObject;
     return (
       <div className="container">
         <h1 className="center">React Salário</h1>
@@ -27,6 +27,10 @@ export default class App extends Component {
         </div>
         <div className="row">
           <InputReadOnly label="Base INSS" value={baseINSS} />
+          <InputReadOnly label="Desconto INSS" value={discountINSS} percentage={percentINSS} />
+          <InputReadOnly label="Base IRPF" value={baseIRPF} />
+          <InputReadOnly label="Desconto IRPF" value={discountIRPF} percentage={percentIRPF} />
+          <InputReadOnly label="Salário Líquido" value={netSalary} percentage={percentNetSalary} />
         </div>
       </div>
     );

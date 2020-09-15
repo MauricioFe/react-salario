@@ -11,9 +11,9 @@ export default class InputReadOnly extends Component {
         const formattedeValue = `${value} ${formattedePercentage}`;
         return (
             <div className="input-field col s12 m6 l3">
+                
                 <input id="inputReadOnly" value={formattedeValue} readOnly />
-                <label className="active" htmlFor="inputReadOnly">Salário Bruto</label>
-                {label}
+                <label className="active">{label}</label>
             </div>
         )
     }
