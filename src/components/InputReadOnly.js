@@ -10,7 +10,7 @@ export default class InputReadOnly extends Component {
         const formattedeValue = `${value} (${percentage})`;
         return (
             <div className="input-field col s12 m6 l3">
-                <input id="inputReadOnly" type="number" value={value} readOnly />
+                <input id="inputReadOnly" value={value} readOnly />
                 <label className="active" htmlFor="inputReadOnly">Salário Bruto</label>
                 {label}
             </div>
