@@ -18,7 +18,7 @@ export default class App extends Component {
   render() {
     const { fullSalary } = this.state;
     const salaryObject = calculateSalaryFrom(fullSalary);
-    const {baseINSS, discountINSS, discountIRPF,baseIRFS, netSalary} = salaryObject;
+    const {baseINSS, discountINSS, discountIRPF,baseIRFS, netSalary, percentINSS, percentIRPF} = salaryObject;
     return (
       <div className="container">
         <h1 className="center">React Salário</h1>
@@ -26,7 +26,7 @@ export default class App extends Component {
           <InputFullSalary currentValue={fullSalary} onSalaryChange={this.handleFullSalaryChange} />
         </div>
         <div className="row">
-          <InputReadOnly label="Base INSS" value={baseINSS}  />
+          <InputReadOnly label="Base INSS" value={baseINSS} />
         </div>
       </div>
     );
