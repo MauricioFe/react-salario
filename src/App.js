@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import InputFullSalary from './components/inputFullSalary';
+import InputFullSalary from './components/InputFullSalary';
+import { calculateSalaryFrom } from './helpers/salary';
 
 
 export default class App extends Component {
@@ -12,10 +13,10 @@ export default class App extends Component {
   }
   handleFullSalaryChange = (newValue) => {
     this.setState({ fullSalary: newValue });
-    console.log(this.state.fullSalary)
   }
   render() {
     const { fullSalary } = this.state;
+    const salaryObject = calculateSalaryFrom(fullSalary);
     return (
       <div className="container">
         <h1 className="center">React Salário</h1>
