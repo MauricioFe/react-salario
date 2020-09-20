@@ -31,11 +31,11 @@ export default class App extends Component {
         <div className="row">
           <InputReadOnly label="Base INSS" value={baseINSS} color={COLOR_INSS} />
           <InputReadOnly label="Desconto INSS" value={discountINSS} percentage={percentINSS} />
-          <InputReadOnly label="Base IRPF" value={baseIRPF} color={COLOR_IRPF}/>
+          <InputReadOnly label="Base IRPF" value={baseIRPF} color={COLOR_IRPF} />
           <InputReadOnly label="Desconto IRPF" value={discountIRPF} percentage={percentIRPF} />
-          <InputReadOnly label="Salário Líquido" value={netSalary} percentage={percentNetSalary}  color={COLOR_NET_SALARY}/>
-          <ProportionBar />
+          <InputReadOnly label="Salário Líquido" value={netSalary} percentage={percentNetSalary} color={COLOR_NET_SALARY} />
         </div>
+        <ProportionBar inss={percentINSS} irpf={percentIRPF} netSalary={percentNetSalary} colorINSS={COLOR_INSS} colorIRPF={COLOR_IRPF} colorNetSalary={COLOR_NET_SALARY} />
       </div>
     );
   }
