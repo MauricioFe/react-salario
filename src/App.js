@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import InputFullSalary from './components/InputFullSalary';
 import InputReadOnly from './components/InputReadOnly';
+import ProportionBar from './components/ProportionBar';
 import { calculateSalaryFrom } from './helpers/salary';
 const COLOR_INSS = '#e67e22';
 const COLOR_IRPF = '#c0392b';
@@ -33,6 +34,7 @@ export default class App extends Component {
           <InputReadOnly label="Base IRPF" value={baseIRPF} color={COLOR_IRPF}/>
           <InputReadOnly label="Desconto IRPF" value={discountIRPF} percentage={percentIRPF} />
           <InputReadOnly label="Salário Líquido" value={netSalary} percentage={percentNetSalary}  color={COLOR_NET_SALARY}/>
+          <ProportionBar />
         </div>
       </div>
     );
