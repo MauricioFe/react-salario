@@ -8,13 +8,13 @@ export default class InputReadOnly extends Component {
     }
     render() {
         const { value, color = 'black', percentage, label } = this.props;
-
-        const formattedPercentage = percentage > 0? `(${formatPercentage(percentage)}) `: '';
+        const id = label;
+        const formattedPercentage = percentage > 0 ? `(${formatPercentage(percentage)}) ` : '';
         const formattedValue = `${formatMoney(value)} ${formattedPercentage}`;
         return (
             <div className="input-field col s12 m6 l3">
-                
-                <input id="inputReadOnly" value={formattedValue} readOnly />
+
+                <input id={id} value={formattedValue} readOnly style={{ color, fontWeight: 'bold' }} />
                 <label className="active">{label}</label>
             </div>
         )
