@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { formatPercentage } from '../helpers/formatters';
 
 export default class InputReadOnly extends Component {
     handleInputChange = (event) => {
@@ -7,8 +8,8 @@ export default class InputReadOnly extends Component {
     }
     render() {
         const { value, color = 'black', percentage, label } = this.props;
-        const formattedePercentage = percentage > 0? `(${percentage}) `: '';
-        const formattedeValue = `${value} ${formattedePercentage}`;
+        const formattedPercentage = percentage > 0? `(${formatPercentage(percentage)}) `: '';
+        const formattedeValue = `${value} ${formattedPercentage}`;
         return (
             <div className="input-field col s12 m6 l3">
                 
